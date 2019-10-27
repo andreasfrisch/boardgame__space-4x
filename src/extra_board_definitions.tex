@@ -5,6 +5,12 @@
 \pgfmathsetmacro{\marketboardwidth}{6}
 \pgfmathsetmacro{\marketboardheight}{\fieldheight*7}
 
+\tikzset{
+	cardcorners/.style={
+		rounded corners=0.2cm
+	}
+}
+
 \newcommand{\marketboard}[1]{
 	\draw[#1,ultra thick] (0,0) rectangle (\marketboardwidth,\marketboardheight);
 	\foreach \x in {1,...,6}{
@@ -25,4 +31,89 @@
 	\node [text width=\fieldwidth cm] at (1.3+0.5*\fieldwidth,#2*\fieldheight-0.2) {
 		\includegraphics[width=0.5 cm]{#1}
 	};	
+}
+
+\pgfmathsetmacro{\techwidth}{2}
+\pgfmathsetmacro{\techheight}{2}
+\pgfmathsetmacro{\techmargin}{0.4}
+\pgfmathsetmacro{\techeffectwidth}{\techwidth-2*\techmargin}
+\pgfmathsetmacro{\doubletechwidth}{2*\techwidth}
+\pgfmathsetmacro{\doubletecheffectwidth}{\doubletechwidth-2*\techmargin}
+\pgfmathsetmacro{\techboardwidth}{\doubletechwidth*4}
+\pgfmathsetmacro{\techboardheight}{3}
+
+\newcommand{\technologyboard}{
+	\draw[black,fill=green] (0,\techboardheight-\techheight) rectangle (\doubletechwidth,\techboardheight);
+	\draw[green,fill=green] (0.5*\techwidth-0.1,0) rectangle (0.5*\techwidth+0.1,\techboardheight-\techheight);	
+	\draw[green,fill=green] (1.5*\techwidth-0.1,0) rectangle (1.5*\techwidth+0.1,\techboardheight-\techheight);	
+	\node [text width=\doubletechwidth cm] at (0.5*\doubletechwidth,\techboardheight-0.5*\techheight) {
+		\begin{center}
+			\includegraphics[width=1cm]{icons/build.png}
+			\includegraphics[width=1cm]{icons/move.png}
+		\end{center}
+	};
+	
+	\draw[black,fill=teal] (\doubletechwidth,\techboardheight-\techheight) rectangle (2*\doubletechwidth,\techboardheight);
+	\draw[teal,fill=teal] (2.5*\techwidth-0.1,0) rectangle (2.5*\techwidth+0.1,\techboardheight-\techheight);
+	\draw[teal,fill=teal] (3.5*\techwidth-0.1,0) rectangle (3.5*\techwidth+0.1,\techboardheight-\techheight);
+	\node [text width=\doubletechwidth cm] at (1.5*\doubletechwidth,\techboardheight-0.5*\techheight) {
+		\begin{center}
+			\includegraphics[width=1cm]{icons/sell.png}
+			\includegraphics[width=1cm]{icons/produce.png}
+		\end{center}
+	};
+
+	\draw[black,fill=brown] (2*\doubletechwidth,\techboardheight-\techheight) rectangle (3*\doubletechwidth,\techboardheight);
+	\draw[brown,fill=brown] (4.5*\techwidth-0.1,0) rectangle (4.5*\techwidth+0.1,\techboardheight-\techheight);
+	\draw[brown,fill=brown] (5.5*\techwidth-0.1,0) rectangle (5.5*\techwidth+0.1,\techboardheight-\techheight);
+	\node [text width=\doubletechwidth cm] at (2.5*\doubletechwidth,\techboardheight-0.5*\techheight) {
+		\begin{center}
+			\includegraphics[width=1cm]{icons/outpost.png}
+			\includegraphics[width=1cm]{icons/colonize.png}
+		\end{center}
+	};
+
+	\draw[black,fill=pink] (3*\doubletechwidth,\techboardheight-\techheight) rectangle (4*\doubletechwidth,\techboardheight);
+	\draw[pink,fill=pink] (6.5*\techwidth-0.1,0) rectangle (6.5*\techwidth+0.1,\techboardheight-\techheight);
+	\draw[pink,fill=pink] (7.5*\techwidth-0.1,0) rectangle (7.5*\techwidth+0.1,\techboardheight-\techheight);
+	\node [text width=\doubletechwidth cm] at (3.5*\doubletechwidth,\techboardheight-0.5*\techheight) {
+		\begin{center}
+			\includegraphics[width=1cm]{icons/engage.png}
+		\end{center}
+	};
+	
+	\draw[black] (0,0) rectangle (\techboardwidth,\techboardheight);
+}
+
+\newcommand{\singletile}[3]{
+	\draw[#1,fill=#1] (0.5*\techwidth-0.1,\techheight) rectangle (0.5*\techwidth+0.1,\techheight-\techmargin);
+	\draw[#3,fill=#3] (0.5*\techwidth-0.1,0) rectangle (0.5*\techwidth+0.1,\techmargin);
+	\draw[black,fill=white,cardcorners] (\techmargin,\techmargin) rectangle (\techwidth-\techmargin,\techheight-\techmargin);
+	\node [text width=\techeffectwidth cm] at (0.5*\techwidth,0.5*\techheight) {
+		\begin{center}#2\end{center}
+	};
+	\draw[black] (0,0) rectangle (\techwidth,\techheight);
+}
+
+\newcommand{\doubletile}[5]{
+	\draw[#1,fill=#1] (0.5*\techwidth-0.1,\techheight) rectangle (0.5*\techwidth+0.1,\techheight-\techmargin);
+	\draw[#2,fill=#2] (1.5*\techwidth-0.1,\techheight) rectangle (1.5*\techwidth+0.1,\techheight-\techmargin);
+	\draw[#4,fill=#4] (0.5*\techwidth-0.1,0) rectangle (0.5*\techwidth+0.1,\techmargin);
+	\draw[#5,fill=#5] (1.5*\techwidth-0.1,0) rectangle (1.5*\techwidth+0.1,\techmargin);
+	\draw[black,fill=white,cardcorners] (\techmargin,\techmargin) rectangle (\doubletechwidth-\techmargin,\techheight-\techmargin);
+	\node [text width=\doubletecheffectwidth cm] at (0.5*\doubletechwidth,0.5*\techheight) {
+		\begin{center}#3\end{center}
+	};
+	\draw[black] (0,0) rectangle (\doubletechwidth,\techheight);
+}
+\newcommand{\doubletiletwolines}[5]{
+	\draw[#1,fill=#1] (0.5*\techwidth-0.1,\techheight) rectangle (0.5*\techwidth+0.1,\techheight-\techmargin);
+	\draw[#2,fill=#2] (1.5*\techwidth-0.1,\techheight) rectangle (1.5*\techwidth+0.1,\techheight-\techmargin);
+	\draw[#4,fill=#4] (0.5*\techwidth-0.1,0) rectangle (0.5*\techwidth+0.1,\techmargin);
+	\draw[#5,fill=#5] (1.5*\techwidth-0.1,0) rectangle (1.5*\techwidth+0.1,\techmargin);
+	\draw[black,fill=white,cardcorners] (\techmargin,\techmargin) rectangle (\doubletechwidth-\techmargin,\techheight-\techmargin);
+	\node [text width=\doubletecheffectwidth cm] at (0.5*\doubletechwidth,0.75*\techheight) {
+		\begin{center}{\small #3}\end{center}
+	};
+	\draw[black] (0,0) rectangle (\doubletechwidth,\techheight);
 }

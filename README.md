@@ -119,8 +119,13 @@ Players may only sell as many resources as there are population + settlers on th
 All other markets raise their perceived values of the sold goods type by 1.
 
 #### Research
-Pay to start researching a technology tile (civ tile or ship tile)
-When researching, the player will receive the tile when next shuffling
+Play to start researching a technology tile.
+A single technology tile costs 4 cars/credit and a double tile costs 10
+
+The player will receive the tile when next shuffling his deck.
+The player then immediately slots the tile into his research board.
+
+When activating the abilities shown in the research board, go down through the board and get all the benefits listed there.
 
 #### Build
 Build ships at an outpost (up to population)

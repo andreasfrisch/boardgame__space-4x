@@ -1,0 +1,144 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[margin=5mm,top=20mm]{geometry}
+\input{libs.tex}
+\input{colors.tex}
+\input{extra_board_definitions.tex}
+\input{card_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+
+% Single Tile Colour Retainers
+\foreach \x in {1,...,2}{
+\noindent
+\begin{tikzpicture}
+	\singletile{pink}{\xcardcredit{+1}}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{\xcardcredit{+1}}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{green}{\xcardcredit{+1}}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{\xcardcredit{+1}}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{pink}{\xcardcredit{+1}}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{\xcardcredit{+1}}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{green}{\xcardcredit{+1}}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{\xcardcredit{+1}}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{pink}{\xcardcredit{+1}}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{\xcardcredit{+1}}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{green}{\xcardcredit{+1}}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{\xcardcredit{+1}}{brown}
+\end{tikzpicture}
+
+}
+
+% Single Tiles Colour Changers
+\foreach \x in {1,...,2}{
+\noindent
+\begin{tikzpicture}
+	\singletile{pink}{}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{green}{}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{pink}{}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{brown}{}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{teal}{}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\singletile{green}{}{teal}
+\end{tikzpicture}
+
+}
+
+% Double Easy To Get
+\foreach \x in {1,...,3}{
+\begin{tikzpicture}
+	\doubletile{green}{teal}{\xcardcredit{+1}}{teal}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletile{teal}{brown}{\xcardcredit{+1}}{brown}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletile{brown}{pink}{\xcardcredit{+1}}{pink}{brown}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletile{green}{teal}{\xcardcredit{+1}}{teal}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletile{teal}{brown}{\xcardcredit{+1}}{brown}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletile{brown}{pink}{\xcardcredit{+1}}{pink}{brown}
+\end{tikzpicture}
+
+}
+
+% Double Tile Hard To Get
+\foreach \x in {1,...,2}{
+\indent
+\begin{tikzpicture}
+	\doubletiletwolines{green}{brown}{Move: Colonizations}{brown}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletiletwolines{teal}{pink}{\xcardcredit{4}: Keep tactics}{pink}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletiletwolines{green}{pink}{Ignore blockades}{pink}{green}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletiletwolines{pink}{brown}{Overtake outpost: settle for free}{brown}{pink}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletiletwolines{teal}{green}{Produce: Move}{green}{teal}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\doubletiletwolines{brown}{teal}{Settle: Produce for free}{teal}{brown}
+\end{tikzpicture}
+
+}
+
+\end{center}
+\end{document}

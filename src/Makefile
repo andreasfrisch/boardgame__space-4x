@@ -1,4 +1,4 @@
-All: cards board extraboards clean
+All: cards board extraboards technology clean
 
 cards:
 	./latexdockercmd.sh pdflatex player_deck_cards.tex
@@ -17,5 +17,12 @@ extraboards:
 	./latexdockercmd.sh pdflatex shuffle_track.tex
 	mv market_boards.pdf ../
 	mv shuffle_track.pdf ../
+
+technology:
+	./latexdockercmd.sh pdflatex technology_boards.tex
+	./latexdockercmd.sh pdflatex technology_tiles.tex
+	mv technology_boards.pdf ../
+	mv technology_tiles.pdf ../
+	
 clean:
 	rm *.log *.aux
