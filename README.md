@@ -1,4 +1,4 @@
-# Area Control Cards
+# 4X Space Euro
 
 Space-themed 4X game with a euro flair.
 
@@ -36,7 +36,8 @@ Tactics can only be used at certain points in time, as described on the tactics 
 If a card has multiple actions printed on it, only one can be used when that card is played.
 
 ### Player Deck Card Count
-TBD
+The player decks consists of 20 cards initially.
+The cards can be found in the \it{player_deck_cards.pdf}.
 
 ## Player Pieces
 Besides their action deck players will have the following pieces:
