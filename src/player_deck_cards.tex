@@ -1,0 +1,198 @@
+\documentclass[a4paper]{article}
+\input{libs.tex}
+\input{colors.tex}
+\input{card_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Move}{icons/move.png}{green}
+	\topabilitytext{Move a single fleet \xcardcredit{X} steps.}
+	
+	\bottomability{Manoeuvres}{icons/lightning.png}{purple}
+	\bottomabilitytext{play at any time: Immediately perform a move as if you had just played a single Move Action card. This move ignore enemy blockades.
+You still have to pay cards or credit to generate movement points.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Move}{icons/move.png}{green}
+	\topabilitytext{Move a single fleet \xcardcredit{X} steps.}
+
+	\bottomability{Engage}{icons/engage.png}{red}
+	\bottomabilitytext{Start \xcardcredit{X} engagements.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Move}{icons/move.png}{green}
+	\topabilitytext{Move a single fleet \xcardcredit{X} steps.}
+
+	\bottomability{Sell}{icons/sell.png}{teal}
+	\bottomabilitytext{Sell goods on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Move}{icons/move.png}{green}
+	\topabilitytext{Move a single fleet \xcardcredit{X} steps.}
+
+	\bottomability{Colonize}{icons/colonize.png}{brown}
+	\bottomabilitytext{Add population to a planet with an outpost you control. Adding population costs \xcardcredit{X} where X is the amount of population + settlers already on the planet.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Move}{icons/move.png}{green}
+	\topabilitytext{Move a single fleet \xcardcredit{X} steps.}
+	
+	\bottomability{Outpost}{icons/outpost.png}{brown}
+	\bottomabilitytext{Establish outposts on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Engage}{icons/engage.png}{red}
+	\topabilitytext{Start \xcardcredit{X} engagements.}
+
+	\bottomability{Hidden Weapons}{icons/lightning.png}{purple}
+	\bottomabilitytext{play at any time: Your scouts counts as warships for the rest of the current player's turn.}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Engage}{icons/engage.png}{red}
+	\topabilitytext{Start \xcardcredit{X} engagements.}
+
+	\bottomability{Outpost}{icons/outpost.png}{brown}
+	\bottomabilitytext{Establish outposts on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Engage}{icons/engage.png}{red}
+	\topabilitytext{Start \xcardcredit{X} engagements.}
+
+	\bottomability{Research}{icons/technology.png}{orange}
+	\bottomabilitytext{Pay \xcardcredit{X} to start researching a technology tile.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Outpost}{icons/outpost.png}{brown}
+	\topabilitytext{Establish outposts on \xcardcredit{X} planets.}
+
+	\bottomability{Colonize}{icons/colonize.png}{brown}
+	\bottomabilitytext{Add population to a planet with an outpost you control. Adding population costs \xcardcredit{X} where X is the amount of population + settlers already on the planet.}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Build}{icons/build.png}{orange}
+	\topabilitytext{Build ships at \xcardcredit{X} outposts costing \xcardcredit{2} each. Building is limited by population.}
+
+	\bottomability{Outpost}{icons/outpost.png}{brown}
+	\bottomabilitytext{Establish outposts on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Build}{icons/build.png}{orange}
+	\topabilitytext{Build ships at \xcardcredit{X} outposts costing \xcardcredit{2} each. Building is limited by population.}
+
+	\bottomability{Colonize}{icons/colonize.png}{brown}
+	\bottomabilitytext{Add population to a planet with an outpost you control. Adding population costs \xcardcredit{X} where X is the amount of population + settlers already on the planet.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Build}{icons/build.png}{orange}
+	\topabilitytext{Build ships at \xcardcredit{X} outposts costing \xcardcredit{2} each. Building is limited by population.}
+
+	\bottomability{Decoy Fleet}{icons/lightning.png}{purple}
+	\bottomabilitytext{Play during space battle:
+As loser: Remove one scout ship from the engagement, ignore all other losses for this battle round.
+As winner: ignore ship loss for this battle round}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Research}{icons/technology.png}{orange}
+	\topabilitytext{Pay \xcardcredit{X} to start researching a technology tile.}
+
+	\bottomability{Decoy Fleet}{icons/lightning.png}{purple}
+	\bottomabilitytext{Play during space battle:
+As loser: Remove one scout ship from the engagement, ignore all other losses for this battle round.
+As winner: ignore ship loss for this battle round}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Research}{icons/technology.png}{orange}
+	\topabilitytext{Pay \xcardcredit{X} to start researching a technology tile.}
+
+	\bottomability{Hidden Weapons}{icons/lightning.png}{purple}
+	\bottomabilitytext{play at any time: Your scouts counts as warships for the rest of the current player's turn.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Produce}{icons/produce.png}{teal}
+	\topabilitytext{Produce resources on \xcardcredit{X} planets where you have an outpost. Production capped by population. Production costs \xcardcredit{1}  per goods.}
+
+	\bottomability{Sell}{icons/sell.png}{teal}
+	\bottomabilitytext{Sell goods on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Produce}{icons/produce.png}{teal}
+	\topabilitytext{Produce resources on \xcardcredit{X} planets where you have an outpost. Production capped by population. Production costs \xcardcredit{1}  per goods.}
+
+	\bottomability{Sell}{icons/sell.png}{teal}
+	\bottomabilitytext{Sell goods on \xcardcredit{X} planets.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Produce}{icons/produce.png}{teal}
+	\topabilitytext{Produce resources on \xcardcredit{X} planets where you have an outpost. Production capped by population. Production costs \xcardcredit{1}  per goods.}
+
+	\bottomability{Build}{icons/build.png}{orange}
+	\bottomabilitytext{Build ships at \xcardcredit{X} outposts costing \xcardcredit{2} each. Building is limited by population.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Produce}{icons/produce.png}{teal}
+	\topabilitytext{Produce resources on \xcardcredit{X} planets where you have an outpost. Production capped by population. Production costs \xcardcredit{1}  per goods.}
+
+	\bottomability{Sympathisers}{icons/lightning.png}{purple}
+	\bottomabilitytext{Play during a ground battle:
+If attacker: The defender cannot count the local population as Battle Strength.
+If defender: Get +2 Battle Strength from population, but if losing, reduce population by 1 additional point.
+}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\topability{Sell}{icons/sell.png}{teal}
+	\topabilitytext{Sell goods on \xcardcredit{X} planets.}
+
+	\bottomability{Sympathisers}{icons/lightning.png}{purple}
+	\bottomabilitytext{Play during a ground battle:
+If attacker: The defender cannot count the local population as Battle Strength.
+If defender: Get +2 Battle Strength from population, but if losing, reduce population by 1 additional point.
+}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\topability{Colonize}{icons/colonize.png}{brown}
+	\topabilitytext{Add population to a planet with an outpost you control. Adding population costs \xcardcredit{X} where X is the amount of population + settlers already on the planet.}
+
+	\bottomability{Manoeuvres}{icons/lightning.png}{purple}
+	\bottomabilitytext{play at any time: Immediately perform a move as if you had just played a single Move Action card. This move ignore enemy blockades.
+You still have to pay cards or credit to generate movement points.}
+\end{tikzpicture}%
+
+\end{center}
+\end{document}

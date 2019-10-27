@@ -1,0 +1,88 @@
+% Sizes
+\pgfmathsetmacro{\cardwidth}{6.3}
+\pgfmathsetmacro{\cardheight}{8.8}
+
+\pgfmathsetmacro{\verticalspacing}{0.4}
+\pgfmathsetmacro{\horizontalspacing}{0.4}
+
+\pgfmathsetmacro{\abilitywidth}{\cardwidth-2*\horizontalspacing}
+\pgfmathsetmacro{\fullabilityheight}{\cardheight-2*\verticalspacing}
+\pgfmathsetmacro{\halfabilityheight}{0.5*(\cardheight-3*\verticalspacing)}
+\pgfmathsetmacro{\abilitybannerwidth}{1}
+\pgfmathsetmacro{\abilityiconsize}{0.5}
+\pgfmathsetmacro{\abilitytextwidth}{\abilitywidth-\abilitybannerwidth-0.4}
+
+% Shapes
+\def\shapeCard{(0,0) rectangle (\cardwidth,\cardheight)}
+
+\tikzset{
+	cardcorners/.style={
+		rounded corners=0.2cm
+	}
+}
+
+% Commands
+\newcommand{\cardborder}{
+	\draw[lightgray,cardcorners] \shapeCard;
+}
+
+\newcommand{\xcardcredit}[1]{
+	#1
+}
+
+\newcommand{\topability}[3]{
+	\fill[#3, cardcorners] (\horizontalspacing, \cardheight-\verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \cardheight-\verticalspacing-\halfabilityheight);
+	\fill[#3] (\horizontalspacing+0.5*\abilitybannerwidth, \cardheight-\verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \cardheight-\verticalspacing-\halfabilityheight);
+	\draw[black, cardcorners] (\horizontalspacing, \cardheight-\verticalspacing) rectangle (\cardwidth-\horizontalspacing, \cardheight-\verticalspacing-\halfabilityheight);
+	\node (abilityicon) at (\horizontalspacing+\abilitybannerwidth+0.5*\abilityiconsize,\cardheight-\verticalspacing-0.5*\abilityiconsize) {\includegraphics[width=\abilityiconsize cm]{#2}};
+	\node [text width=\halfabilityheight cm, rotate=90] at (\horizontalspacing+0.5*\abilitybannerwidth, \cardheight-\verticalspacing-0.5*\halfabilityheight) {
+		\begin{center}
+			\begin{center}\color{white}{\Large \bf #1}\end{center}
+		\end{center}
+	};
+}
+\newcommand{\topabilitytext}[1]{
+	\node [text width=\abilitytextwidth cm] at (0.5*\cardwidth+0.5*\abilitybannerwidth, \cardheight-\verticalspacing-0.5*\halfabilityheight) {
+		\begin{center}
+			\small #1
+		\end{center}
+	};
+}
+
+\newcommand{\bottomability}[3]{
+	\fill[#3, cardcorners] (\horizontalspacing, \verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \verticalspacing+\halfabilityheight);
+	\fill[#3] (\horizontalspacing+0.5*\abilitybannerwidth, \verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \verticalspacing+\halfabilityheight);
+	\draw[black, cardcorners] (\horizontalspacing, \verticalspacing) rectangle (\cardwidth-\horizontalspacing, \verticalspacing+\halfabilityheight);
+	\node (abilityicon) at (\horizontalspacing+\abilitybannerwidth+0.5*\abilityiconsize,\verticalspacing+\halfabilityheight-0.5*\abilityiconsize) {\includegraphics[width=\abilityiconsize cm]{#2}};
+	\node [text width=\halfabilityheight cm, rotate=90] at (\horizontalspacing+0.5*\abilitybannerwidth, \verticalspacing+0.5*\halfabilityheight) {
+		\begin{center}
+			\begin{center}\color{white}{\Large \bf #1}\end{center}
+		\end{center}
+	};
+}
+\newcommand{\bottomabilitytext}[1]{
+	\node [text width=\abilitytextwidth cm] at (0.5*\cardwidth+0.5*\abilitybannerwidth, \verticalspacing+0.5*\halfabilityheight) {
+		\begin{center}
+			\small #1
+		\end{center}
+	};
+}
+
+\newcommand{\fullability}[3]{
+	\fill[#3, cardcorners] (\horizontalspacing, \cardheight-\verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \cardheight-\verticalspacing-\fullabilityheight);
+	\fill[#3] (\horizontalspacing+0.5*\abilitybannerwidth, \cardheight-\verticalspacing) rectangle (\horizontalspacing+\abilitybannerwidth, \cardheight-\verticalspacing-\fullabilityheight);
+	\draw[black, cardcorners] (\horizontalspacing, \cardheight-\verticalspacing) rectangle (\cardwidth-\horizontalspacing, \cardheight-\verticalspacing-\fullabilityheight);
+	\node (abilityicon) at (\horizontalspacing+\abilitybannerwidth+0.5*\abilityiconsize,\cardheight-\verticalspacing-0.5*\abilityiconsize) {\includegraphics[width=\abilityiconsize cm]{#2}};
+	\node [text width=\fullabilityheight cm, rotate=90] at (\horizontalspacing+0.5*\abilitybannerwidth, \cardheight-\verticalspacing-0.5*\fullabilityheight) {
+		\begin{center}
+			\begin{center}\color{white}{\Large \bf #1}\end{center}
+		\end{center}
+	};
+}
+\newcommand{\fullabilitytext}[1]{
+	\node [text width=\abilitytextwidth cm] at (0.5*\cardwidth+0.5*\abilitybannerwidth, \verticalspacing+0.5*\fullabilityheight) {
+		\begin{center}
+			\small #1
+		\end{center}
+	};
+}

@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article}
+\input{libs.tex}
+\input{colors.tex}
+\input{card_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\foreach \x in {1,...,10}{
+\noindent
+\begin{tikzpicture}
+	\cardborder
+	\fullability{Bureaucracy}{icons/paperwork.png}{black}
+	\fullabilitytext{Cannot be used to pay for other cards. May discard at will.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\fullability{Bureaucracy}{icons/paperwork.png}{black}
+	\fullabilitytext{Cannot be used to pay for other cards. May discard at will.}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardborder
+	\fullability{Bureaucracy}{icons/paperwork.png}{black}
+	\fullabilitytext{Cannot be used to pay for other cards. May discard at will.}
+\end{tikzpicture}%
+
+}
+
+\end{center}
+\end{document}
