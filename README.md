@@ -76,11 +76,18 @@ Movement between sectors (from planets of one colour to planets of another colou
 Players may pick up and drop off ships during movement.
 Moving into the Outer Rim immediately reveals the anomaly there.
 Players may not continue moving after revealing a planet.
-In case players reveal a wormhole, they immediately places another wormhole on the board (if not present) and move ships to there.
+In case players reveal a wormhole, they immediately move to the other wormhole if present.
 Players may not leave a space if there are more enemy warships than friendly warships on that space -- unless permitted by the controlling opponent.
 Scout ships add +1 Movement point to a fleet.
 
 NOTE: players may give money to other players.
+
+##### Outer Rim Anomalies (10)
+* 2 Wormholes
+* 2 Alien with power 3
+* 3 Smuggler Cave (1 in each colour)
+* 2 Empty
+* Black Market (buys as central planet)
 
 #### Produce
 Produce resources at a planet you have an outpost (up to population)
@@ -107,6 +114,9 @@ Look at the current value for the goods sold in the current sector.
 Gain that amount of credit per good sold.
 Then reduce the market track for the goods sold, for that sector, for each good of that type sold.
 Players cannot sell resources on a planet, if there are more enemy warships on that planet, than friendly warships.
+Players may only sell as many resources as there are population + settlers on the planet.
+
+All other markets raise their perceived values of the sold goods type by 1.
 
 #### Research
 Pay to start researching a technology tile (civ tile or ship tile)

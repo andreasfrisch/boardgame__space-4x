@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=5mm,top=20mm]{geometry}
+\input{libs.tex}
+\input{colors.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+
+\begin{tikzpicture}
+	\draw[black,fill=lightgray] (2,24) rectangle (4,26);
+	\foreach \i in {1,...,2} {
+		\foreach \j in {1,...,12} {
+			\pgfmathsetmacro{\fieldvalue}{\j+12*\i-12}
+			\draw[black,thick] (0+2*\i,0+2*\j) rectangle (2+2*\i,2+2*\j);
+			\node [text width=3 cm] at (1+2*\i,1+2*\j) {
+				\begin{center}
+					{\Large \bf \fieldvalue}
+				\end{center}
+			};
+		}
+	}
+\end{tikzpicture}
+
+\end{center}
+\end{document}

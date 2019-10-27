@@ -1,0 +1,157 @@
+\documentclass[landscape]{article}
+\usepackage[paper=a3paper,margin=5mm,top=20mm]{geometry}
+\input{libs.tex}
+\input{colors.tex}
+\input{game_board_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+
+\newcommand{\centerPlanet}{(\centerx, \centery+0.2*\centery)}
+
+\begin{tikzpicture}
+
+% Quadrant 1 definitions
+\definecolor{q1}{RGB}{128,0,128}
+\newcommand{\firstQuadrantFirstPlanet}{(\centerx-0.33*\centerx, \centery+0.5*\centery)}
+\newcommand{\firstQuadrantSecondPlanet}{(\centerx-0.15*\centerx, \centery+0.85*\centery)}
+\newcommand{\firstQuadrantThirdPlanet}{(\centerx-0.66*\centerx, \centery+0.3*\centery)}
+\newcommand{\firstQuadrantFourthPlanet}{(\centerx-0.58*\centerx, \centery+0.7*\centery)}
+
+\newcommand{\firstQuadrantFirstAnomaly}{(\centerx-0.9*\centerx, \centery+0.67*\centery)}
+\newcommand{\firstQuadrantThirdAnomaly}{(\centerx-0.88*\centerx, \centery+0.325*\centery)}
+\newcommand{\firstQuadrantFourthAnomaly}{(\centerx-0.72*\centerx, \centery+0.925*\centery)}
+\newcommand{\firstQuadrantFifthAnomaly}{(\centerx-0.3*\centerx, \centery+0.925*\centery)}
+
+\doubleconnect{\firstQuadrantFirstPlanet}{\centerPlanet}
+\doubleconnect{\firstQuadrantSecondPlanet}{\centerPlanet}
+\singleconnect{\firstQuadrantFirstPlanet}{\firstQuadrantSecondPlanet}
+\singleconnect{\firstQuadrantFirstPlanet}{\firstQuadrantThirdPlanet}
+\singleconnect{\firstQuadrantFirstPlanet}{\firstQuadrantFourthPlanet}
+\singleconnect{\firstQuadrantFourthPlanet}{\firstQuadrantThirdPlanet}
+
+\singleconnect{\firstQuadrantThirdPlanet}{\firstQuadrantThirdAnomaly}
+\singleconnect{\firstQuadrantFourthPlanet}{\firstQuadrantFourthAnomaly}
+\singleconnect{\firstQuadrantFourthAnomaly}{\firstQuadrantFirstAnomaly}
+\singleconnect{\firstQuadrantFirstAnomaly}{\firstQuadrantThirdAnomaly}
+\singleconnect{\firstQuadrantSecondPlanet}{\firstQuadrantFifthAnomaly}
+
+% Quadrant 2 definitions
+\definecolor{q2}{RGB}{51,179,198}
+\newcommand{\secondQuadrantFirstPlanet}{(\centerx+0.75*\centerx, \centery+0.2*\centery)}
+\newcommand{\secondQuadrantSecondPlanet}{(\centerx+0.5*\centerx, \centery+0.33*\centery)}
+\newcommand{\secondQuadrantThirdPlanet}{(\centerx+0.15*\centerx, \centery+0.7*\centery)}
+\newcommand{\secondQuadrantFourthPlanet}{(\centerx+0.5*\centerx, \centery+0.8*\centery)}
+
+\newcommand{\secondQuadrantFirstAnomaly}{(\centerx+0.85*\centerx, \centery+0.52*\centery)}
+\newcommand{\secondQuadrantSecondAnomaly}{(\centerx+0.81*\centerx, \centery+0.8*\centery)}
+
+
+\doubleconnect{\secondQuadrantThirdPlanet}{\centerPlanet}
+\singleconnect{\secondQuadrantFirstPlanet}{\secondQuadrantSecondPlanet}
+\singleconnect{\secondQuadrantSecondPlanet}{\secondQuadrantThirdPlanet}
+\singleconnect{\secondQuadrantSecondPlanet}{\secondQuadrantFourthPlanet}
+\singleconnect{\secondQuadrantThirdPlanet}{\secondQuadrantFourthPlanet}
+
+\singleconnect{\secondQuadrantFirstPlanet}{\secondQuadrantFirstAnomaly}
+\singleconnect{\secondQuadrantFirstAnomaly}{\secondQuadrantSecondAnomaly}
+\singleconnect{\secondQuadrantFourthPlanet}{\secondQuadrantSecondAnomaly}
+
+% Quadrant 3 definitions
+\definecolor{q3}{RGB}{216,128,43}
+\newcommand{\thirdQuadrantFirstPlanet}{(\centerx+0.45*\centerx, \centery-0.25*\centery)}
+\newcommand{\thirdQuadrantSecondPlanet}{(\centerx+0.75*\centerx, \centery-0.30*\centery)}
+\newcommand{\thirdQuadrantThirdPlanet}{(\centerx+0.2*\centerx, \centery-0.3*\centery)}
+\newcommand{\thirdQuadrantFourthPlanet}{(\centerx+0.5*\centerx, \centery-0.67*\centery)}
+\newcommand{\thirdQuadrantFifthPlanet}{(\centerx+0.15*\centerx, \centery-0.7*\centery)}
+
+\newcommand{\thirdQuadrantFirstAnomaly}{(\centerx+0.85*\centerx, \centery-0.7*\centery)}
+
+\doubleconnect{\thirdQuadrantThirdPlanet}{\centerPlanet}
+\singleconnect{\thirdQuadrantFirstPlanet}{\thirdQuadrantSecondPlanet}
+\singleconnect{\thirdQuadrantFirstPlanet}{\thirdQuadrantThirdPlanet}
+\singleconnect{\thirdQuadrantSecondPlanet}{\thirdQuadrantFourthPlanet}
+\singleconnect{\thirdQuadrantThirdPlanet}{\thirdQuadrantFourthPlanet}
+\singleconnect{\thirdQuadrantThirdPlanet}{\thirdQuadrantFifthPlanet}
+
+\singleconnect{\thirdQuadrantSecondPlanet}{\thirdQuadrantFirstAnomaly}
+\singleconnect{\thirdQuadrantFourthPlanet}{\thirdQuadrantFirstAnomaly}
+
+% Quadrant 4 definitions
+\definecolor{q4}{RGB}{63,165,56}
+\newcommand{\fourthQuadrantFirstPlanet}{(\centerx-0.6*\centerx, \centery-0.13*\centery)}
+\newcommand{\fourthQuadrantSecondPlanet}{(\centerx-0.3*\centerx, \centery-0.18*\centery)}
+\newcommand{\fourthQuadrantThirdPlanet}{(\centerx-0.66*\centerx, \centery-0.56*\centery)}
+\newcommand{\fourthQuadrantFourthPlanet}{(\centerx-0.25*\centerx, \centery-0.6*\centery)}
+
+\newcommand{\fourthQuadrantFirstAnomaly}{(\centerx-0.85*\centerx, \centery-0.13*\centery)}
+\newcommand{\fourthQuadrantSecondAnomaly}{(\centerx-0.325*\centerx, \centery+0.15*\centery)}
+
+\doubleconnect{\fourthQuadrantSecondPlanet}{\centerPlanet}
+\singleconnect{\fourthQuadrantFirstPlanet}{\fourthQuadrantSecondPlanet}
+\singleconnect{\fourthQuadrantFirstPlanet}{\fourthQuadrantThirdPlanet}
+\singleconnect{\fourthQuadrantSecondPlanet}{\fourthQuadrantFourthPlanet}
+\singleconnect{\fourthQuadrantThirdPlanet}{\fourthQuadrantFourthPlanet}
+
+\singleconnect{\fourthQuadrantFirstPlanet}{\fourthQuadrantFirstAnomaly}
+\singleconnect{\fourthQuadrantThirdPlanet}{\fourthQuadrantFirstAnomaly}
+
+% Inter-quadrant connections
+\doubleconnect{\firstQuadrantThirdPlanet}{\fourthQuadrantFirstPlanet}
+\doubleconnect{\firstQuadrantSecondPlanet}{\secondQuadrantThirdPlanet}
+\doubleconnect{\secondQuadrantSecondPlanet}{\thirdQuadrantFirstPlanet}
+\doubleconnect{\secondQuadrantFirstPlanet}{\thirdQuadrantSecondPlanet}
+\doubleconnect{\thirdQuadrantThirdPlanet}{\fourthQuadrantSecondPlanet}
+\doubleconnect{\thirdQuadrantFifthPlanet}{\fourthQuadrantFourthPlanet}
+
+\singleconnect{\fourthQuadrantSecondPlanet}{\fourthQuadrantSecondAnomaly}
+\singleconnect{\fourthQuadrantSecondAnomaly}{\centerPlanet}
+
+% DRAW PLANETS
+% Draw now to overwrite line endings
+
+% Quadrant 1
+\drawplanetwithgoods{\firstQuadrantFirstPlanet}{q1}{\smallplanetsize}{1}{icons/orange_cube.png}
+\drawplanetwithgoods{\firstQuadrantSecondPlanet}{q1}{\smallplanetsize}{1}{icons/orange_cube.png}
+\drawplanet{\firstQuadrantThirdPlanet}{q1}{\smallplanetsize}{1}
+\drawplanetwithgoods{\firstQuadrantFourthPlanet}{q1}{\mediumplanetsize}{2}{icons/teal_cube.png}
+
+\drawhexat{\centerx-0.9*\centerx}{\centery+0.67*\centery}
+\drawhexat{\centerx-0.88*\centerx}{\centery+0.325*\centery}
+\drawhexat{\centerx-0.72*\centerx}{\centery+0.925*\centery}
+\drawhexat{\centerx-0.3*\centerx}{\centery+0.925*\centery}
+
+% Quadrant 2
+\drawplanetwithgoods{\secondQuadrantFirstPlanet}{q2}{\mediumplanetsize}{2}{icons/pink_cube.png}
+\drawplanetwithgoods{\secondQuadrantSecondPlanet}{q2}{\largeplanetsize}{3}{icons/pink_cube.png}
+\drawplanet{\secondQuadrantThirdPlanet}{q2}{\mediumplanetsize}{2}
+\drawplanet{\secondQuadrantFourthPlanet}{q2}{\largeplanetsize}{3}
+
+\drawhexat{\centerx+0.85*\centerx}{\centery+0.52*\centery}
+\drawhexat{\centerx+0.81*\centerx}{\centery+0.8*\centery}
+
+% Quadrant 3
+\drawplanetwithgoods{\thirdQuadrantFirstPlanet}{q3}{\smallplanetsize}{1}{icons/teal_cube.png}
+\drawplanet{\thirdQuadrantSecondPlanet}{q3}{\mediumplanetsize}{2}
+\drawplanetwithgoods{\thirdQuadrantThirdPlanet}{q3}{\largeplanetsize}{3}{icons/teal_cube.png}
+\drawplanet{\thirdQuadrantFourthPlanet}{q3}{\mediumplanetsize}{2}
+\drawplanetwithgoods{\thirdQuadrantFifthPlanet}{q3}{\smallplanetsize}{1}{icons/pink_cube.png}
+
+\drawhexat{\centerx+0.85*\centerx}{\centery-0.7*\centery}
+
+% Quadrant 4
+\drawplanetwithgoods{\fourthQuadrantFirstPlanet}{q4}{\mediumplanetsize}{1}{icons/pink_cube.png}
+\drawplanetwithgoods{\fourthQuadrantSecondPlanet}{q4}{\mediumplanetsize}{2}{icons/orange_cube.png}
+\drawplanet{\fourthQuadrantThirdPlanet}{q4}{\largeplanetsize}{3}
+\drawplanetwithgoods{\fourthQuadrantFourthPlanet}{q4}{\mediumplanetsize}{2}{icons/pink_cube.png}
+
+\drawhexat{\centerx-0.85*\centerx}{\centery-0.13*\centery}
+\drawhexat{\centerx-0.325*\centerx}{\centery+0.15*\centery}
+
+% Centerplanet
+\drawplanet{\centerPlanet}{black}{\centerplanetsize}{7}
+\end{tikzpicture}
+
+\end{center}
+\end{document}

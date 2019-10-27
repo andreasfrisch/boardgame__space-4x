@@ -1,0 +1,37 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[margin=5mm,top=20mm]{geometry}
+\input{libs.tex}
+\input{colors.tex}
+\input{extra_board_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+
+\begin{tikzpicture}
+	\marketboard{purple}
+	\startspace{icons/pink_cube.png}{4}
+	\startspace{icons/teal_cube.png}{3}
+	\secondarystartspace{icons/orange_cube.png}{3}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\marketboard{teal}
+	\startspace{icons/pink_cube.png}{1}
+	\startspace{icons/teal_cube.png}{3}
+	\secondarystartspace{icons/orange_cube.png}{3}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\marketboard{orange}
+	\startspace{icons/pink_cube.png}{3}
+	\startspace{icons/teal_cube.png}{2}
+	\startspace{icons/orange_cube.png}{4}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\marketboard{green}
+	\startspace{icons/pink_cube.png}{2}
+	\startspace{icons/teal_cube.png}{4}
+	\startspace{icons/orange_cube.png}{3}
+\end{tikzpicture}
+
+\end{center}
+\end{document}

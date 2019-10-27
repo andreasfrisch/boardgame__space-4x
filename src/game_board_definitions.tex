@@ -1,0 +1,106 @@
+% Sizes
+\pgfmathsetmacro{\mapwidth}{42.0}
+\pgfmathsetmacro{\mapheight}{29.7}
+
+\pgfmathsetmacro{\centerx}{0.5*\mapwidth}
+\pgfmathsetmacro{\centery}{0.5*\mapheight}
+
+\pgfmathsetmacro{\centerplanetsize}{4}
+\pgfmathsetmacro{\smallplanetsize}{1.5}
+\pgfmathsetmacro{\mediumplanetsize}{2}
+\pgfmathsetmacro{\largeplanetsize}{3}
+
+
+% Commands
+\newcommand{\singleconnect}[2]{
+	\draw[black,line width=0.2] #1 -- #2;
+}
+
+\newcommand{\doubleconnect}[2]{
+	\draw[black,line width=0.1cm,double] #1 -- #2;
+}
+
+
+% #1: center
+% #2: border colour
+% #3: planetsize
+% #4: population
+\newcommand{\drawplanet}[4]{
+	\draw[#2,ultra thick,fill=white] #1 circle (#3);
+	\draw[black] #1 circle (#3);
+	\node [text width=1.5 cm] at #1 {
+		\begin{center}
+			\begin{center}
+				\raisebox{-0.16cm}{\includegraphics[width=0.5 cm]{icons/population.png}}\color{lightgray}{\bf #4}
+			\end{center}
+		\end{center}
+	};
+}
+% #5: production
+\newcommand{\drawplanetwithgoods}[5]{
+	\drawplanet{#1}{#2}{#3}{#4}
+	\node [text width=1.5 cm] at #1 {
+		\begin{center}
+			\begin{center}
+				\raisebox{-1.25cm}{\includegraphics[width=0.5 cm]{#5}}
+			\end{center}
+		\end{center}
+	};
+}
+
+
+
+
+
+
+% Outer Rim hexes
+\pgfmathsetmacro{\hexwidth}{3}
+\pgfmathsetmacro{\hexedgewidth}{0.5*\hexwidth}
+\pgfmathsetmacro{\abilitytextwidth}{0.5*\hexwidth-0.2}
+\SQUAREROOT{3}{\solution}%
+\pgfmathsetmacro{\triangleheight}{0.25*\solution*\hexwidth}
+
+\newcommand{\drawhexat}[2]{
+	\draw[black, fill=white]
+		(#1-0.5*\hexwidth,#2) --
+		(#1-0.25*\hexwidth,#2+\triangleheight) --
+		(#1+0.25*\hexwidth,#2+\triangleheight) --
+		(#1+0.5*\hexwidth,#2) --
+		(#1+0.25*\hexwidth,#2-\triangleheight) --
+		(#1-0.25*\hexwidth,#2-\triangleheight) --
+		cycle;
+}
+
+\def\shapeHex{
+	(-0.5*\hexwidth,0) --
+	(-0.25*\hexwidth,\triangleheight) --
+	(0.25*\hexwidth,\triangleheight) --
+	(0.5*\hexwidth,0) --
+	(0.25*\hexwidth,-\triangleheight) --
+	(-0.25*\hexwidth,-\triangleheight) --
+	cycle
+}
+% Commands
+\newcommand{\anomalyTile}{
+  \draw[black] \shapeHex;
+}
+
+\newcommand{\anomalyEffect}[1]{
+	\node [text width=\hexwidth cm] at (0,0) {
+		\begin{center}
+			\begin{center}
+				\includegraphics[width=1.5 cm]{#1}
+			\end{center}
+		\end{center}
+	};
+}
+\newcommand{\anomalyDoubleEffect}[1]{
+	\node [text width=\hexwidth cm] at (0,0) {
+		\begin{center}
+			\begin{center}
+				\includegraphics[width=0.9 cm]{#1}
+				\includegraphics[width=0.9 cm]{#1}
+			\end{center}
+		\end{center}
+	};
+}
